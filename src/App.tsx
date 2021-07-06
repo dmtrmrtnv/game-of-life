@@ -82,6 +82,7 @@ const World = ({config, defaultWorld}: WorldPropsType) => {
         // TODO: This algorithm is not effective when there are not many alive cells in the world and if the world is huge.
         // Depending on the requirements I'd chose a different algorithm, It could be some kind of communication
         // between cells using events or something like that.
+        // TODO: Or calculate the state before rendering so setInterval will just set it.
         const intervalId = setInterval(() => {
             setWorld(calculateWorldState.bind(null, config.worldScale));
         }, config.refreshInterval);

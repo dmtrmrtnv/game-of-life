@@ -9,29 +9,33 @@ const WorldComponent = ({config, defaultWorld, className}: WorldPropsType) => {
     useEffect(() => {
         // TODO: Calculate the state before rendering so setInterval will just set it.
         const intervalId = setInterval(() => {
-            setWorld(calculateWorldState.bind(null, config.worldScale));
+            setWorld((prevWorld) => calculateWorldState(config.worldScale, prevWorld));
         }, config.refreshInterval);
         return () => clearInterval(intervalId);
     }, [config]);
 
-    return <table className={className}>
-        <tbody>
-        {world.map((row, rowI) => {
-            return <tr key={rowI} className="row">
-                {row.map((cell, cellI) => <td key={cellI} className={`cell${cell > 0 ? ' alive' : ''}`}/>)}
-            </tr>
-        })}
-        </tbody>
-    </table>
+    return (
+        <table className={className}>
+            <tbody>
+            {world.map((row, rowI) => (
+                <tr key={rowI}>
+                    {row.map((cell, cellI) => (
+                        <td key={cellI} className={`cell${cell > 0 ? ' alive' : ''}`}/>
+                    ))}
+                </tr>
+            ))}
+            </tbody>
+        </table>
+    )
 };
 
 export const World = styled(WorldComponent)`
   border-collapse: collapse;
-  
+
   &, td {
     border: 1px solid #ccc;
   }
-  
+
   td {
     width: 10px;
     height: 10px;

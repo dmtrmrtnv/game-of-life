@@ -126,59 +126,57 @@ const glider = [
     [0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
 ]
 
-const examples: ExamplesType = [{
-    title: "Still lifes",
+export const examples: ExamplesType = [{
+    title: 'Still lifes',
     patterns: [{
-        title: "Block",
+        title: 'Block',
         period: 1,
         world: block
     }, {
-        title: "Bee-hive",
+        title: 'Bee-hive',
         period: 1,
         world: beeHive
     }, {
-        title: "Loaf",
+        title: 'Loaf',
         period: 1,
         world: loaf
     }, {
-        title: "Boat",
+        title: 'Boat',
         period: 1,
         world: boat
     }, {
-        title: "Tub",
+        title: 'Tub',
         period: 1,
         world: tub
     }],
 }, {
-    title: "Oscillators",
+    title: 'Oscillators',
     patterns: [{
-        title: "Blinker",
+        title: 'Blinker',
         period: 2,
         world: blinker
     }, {
-        title: "Toad",
+        title: 'Toad',
         period: 2,
         world: toad
     }, {
-        title: "Beacon",
+        title: 'Beacon',
         period: 2,
         world: beacon
     }, {
-        title: "Pulsar",
+        title: 'Pulsar',
         period: 3,
         world: pulsar
     }, {
-        title: "Penta-decathlon",
+        title: 'Penta-decathlon',
         period: 15,
         world: pentaDecathlon
     }],
 }, {
-    title: "Spaceships",
+    title: 'Spaceships',
     patterns: [{
-        title: "Glider",
+        title: 'Glider',
         period: 40,
         world: glider
     }],
 }];
-
-export default examples;

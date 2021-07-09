@@ -19,9 +19,10 @@ const WorldComponent = ({config, defaultWorld, className}: WorldPropsType) => {
             <tbody>
             {world.map((row, rowI) => (
                 <tr key={rowI}>
-                    {row.map((cell, cellI) => (
-                        <td key={cellI} className={`cell${cell > 0 ? ' alive' : ''}`}/>
-                    ))}
+                    {row.map((cell, cellI) => {
+                        const label = cell > 0 ? 'alive' : 'dead';
+                        return <td title={label} key={cellI} className={label}/>
+                    })}
                 </tr>
             ))}
             </tbody>
